@@ -50,9 +50,12 @@ ctx.translate(W/2, H/2);
 ctx.strokeStyle = 'red';
 ctx.lineWidth = 5;
 
-//let shape = rotateShape(scaleShape(cube, 100), YZ, Math.PI*0);
-//shape = rotateShape(shape, XZ, Math.PI*0);
+const shape = scaleShape(cube, 100);
 
-const shape = rotateShape(scaleShape(cube, 100), normalize(add(YZ, XZ)), Math.PI/4);
-animate(shape, ctx, 0, normalize(add(Z, XZ)), connections);
-//connectShape(shape, connections, ctx);
+//animate(shape, ctx, 0, XY, connections); // -- simple rotation
+
+animate(shape, ctx, 0, normalize(add(XY, XZ)), connections); // -- complex rotation
+
+//animate(shape, ctx, 0, normalize(add(X, YZ)), connections); // -- rotation + scaling
+
+//animate(shape, ctx, 0, normalize(findRotPlane(vector(3, -5, 3))), connections); //  -- rotation along an arbitrary axis

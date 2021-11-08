@@ -3,7 +3,7 @@
  * @param {number[][]} shape array of multivectors
  * @param {number[]} i plane
  * @param {number} ang angle 
- * @returns {number[]} array of multivectors
+ * @returns {number[][]} array of multivectors
  */
 function rotateShape(shape, i, ang) {
     const res = [];
@@ -16,9 +16,9 @@ function rotateShape(shape, i, ang) {
 
 /**
  * Scales the given shape by the given amount
- * @param {*} shape array of multivectors
- * @param {*} amt amount
- * @returns array of multivectors
+ * @param {number[][]} shape array of multivectors
+ * @param {number} amt amount
+ * @returns {number[][]} array of multivectors
  */
 function scaleShape(shape, amt) {
     const res = [];

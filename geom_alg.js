@@ -121,9 +121,9 @@ function rotate(ang, v, i) {
  */
 function magnitude(v) {
     let sum = 0;
-    v.forEach(element => {
-        sum += element*element;   
-    });
+    for (const m of v) {
+        sum += m*m;
+    }
 
     return Math.sqrt(sum);
 }
@@ -135,4 +135,13 @@ function magnitude(v) {
  */
 function normalize(v) {
     return scale(1/magnitude(v), v);
+}
+
+/**
+ * Finds the rotation plane of a multivector
+ * @param {number[]} v multivector
+ * @returns {number[]} multivector
+ */
+function findRotPlane(v) {
+    return [v[7], v[6], -v[5], v[4], v[3], -v[2], v[1], v[0]];
 }
