@@ -1,9 +1,8 @@
 /**
- * Rotates the given shape in the given plane by the given amount of radians
- * @param {number[][]} shape array of multivectors
- * @param {number[]} i plane
- * @param {number} ang angle 
- * @returns {number[][]} array of multivectors
+ * @param {number[][]} shape
+ * @param {number[]} i
+ * @param {number} ang
+ * @returns {number[][]}
  */
 function rotateShape(shape, i, ang) {
     const res = [];
@@ -15,10 +14,9 @@ function rotateShape(shape, i, ang) {
 }
 
 /**
- * Scales the given shape by the given amount
- * @param {number[][]} shape array of multivectors
- * @param {number} amt amount
- * @returns {number[][]} array of multivectors
+ * @param {number[][]} shape
+ * @param {number} amt
+ * @returns {number[][]}
  */
 function scaleShape(shape, amt) {
     const res = [];
@@ -30,9 +28,8 @@ function scaleShape(shape, amt) {
 }
 
 /**
- * Draws a filled rectangle at each vector of the given shape
- * @param {number[][]} shape array of multivectors
- * @param {CanvasRenderingContext2D} ctx drawing context
+ * @param {number[][]} shape
+ * @param {CanvasRenderingContext2D} ctx
  */
  function drawShape(shape, ctx) {
     for (const v of shape) {
@@ -41,10 +38,9 @@ function scaleShape(shape, amt) {
 }
 
 /**
- * Connects vectors on shape accroding to the connection table
- * @param {number[][]} shape array of multivectors
- * @param {number[][]} cons connection table
- * @param {CanvasRenderingContext2D} ctx drawing context
+ * @param {number[][]} shape
+ * @param {number[][]} cons 
+ * @param {CanvasRenderingContext2D} ctx 
  */
 function connectShape(shape, cons, ctx) {
     for (const con of cons) {
